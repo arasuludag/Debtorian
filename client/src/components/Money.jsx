@@ -115,9 +115,13 @@ updateInterval;
             {this.stopOrContinueSpending()}
 
             <form onSubmit = { this.handleSubmit } className="form-inline">
+
               <button type="submit" onClick={this.handleClickChange} name="Logout" className="btn-large waves-effect waves-light cyan" style={{marginTop: "40px", marginRight: "10px"}}>Log out</button>
-              <button type="submit" onClick={this.handleClickChange} name="Leave" className="btn-large waves-effect waves-light grey darken-4" style={{marginTop: "40px"}}>Leave {this.props.money.house.name}</button>
-              </form>
+
+<br />
+            <button type="submit" onClick={this.handleClickChange} name="Leave" className="btn-large waves-effect waves-light grey darken-4" style={{marginTop: "5px"}}>Leave {this.props.money.house.name}</button>
+
+            </form>
               <p style={{marginTop: "40px"}}>People can join {this.props.money.house.name} with this code: {this.props.money.budgetId}</p>
           </div>
           <div className="col l5 s12">

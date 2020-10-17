@@ -54,7 +54,7 @@ class Select extends Component {
     <div className="Squezer">
       <div className="row">
      <div className="col l6 s12 offset-l3 smoothbackground z-depth-4">
-       <h2>You have to select a budget.</h2>
+       <h3>You have to select a budget.</h3>
        <br />
        <form onSubmit = { this.handleSubmit }>
          {this.showBudgets()}
@@ -62,7 +62,7 @@ class Select extends Component {
          <div className="form-group">
 
          <div className="input-field col s8">
-           <h4>You can create a new one,</h4>
+           <h5>You can create a new one,</h5>
         </div>
 
        <div className="input-field col s8">
@@ -71,7 +71,7 @@ class Select extends Component {
          <input type="text" id="icon_balance" className="validate" name="budgetName" onChange= {this.handleNewBudgetNameChange}/>
          <label htmlFor="icon_balance">Ex: The House</label>
          </div>
-         <div className="input-field col s2">
+         <div className="input-field col l2 s12">
          <button onClick={this.handleClickChangeNewBudget} type="submit" className="btn btn-large waves-effect waves-light cyan" name="addNewBudget">Add</button>
          </div>
        </div>
@@ -79,7 +79,7 @@ class Select extends Component {
 
 
        <div className="input-field col s10">
-         <h4>or enter the code you have taken from an existing one.</h4>
+         <h5>or enter the code you have taken from an existing one.</h5>
       </div>
 
        <div className="input-field col s12">
@@ -88,7 +88,7 @@ class Select extends Component {
          <input type="text" id="icon_text" className="validate" name="budgetCode" onChange= {this.handleExistBudgetNameChange}/>
          <label htmlFor="icon_text">Enter the Code</label>
          </div>
-         <div className="input-field col s4">
+         <div className="input-field col s12 l4">
          <button onClick={this.handleClickChangeExistBudget} type="submit" className="btn btn-large waves-effect waves-light cyan" name = "addExistingBudget">Add Existing</button>
          </div>
        </div>
