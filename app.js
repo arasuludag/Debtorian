@@ -29,7 +29,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // MongoDB stuff.
-mongoose.connect('mongodb://localhost:27017/MoneyDB', {
+mongoose.connect(process.env.MONGO, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
