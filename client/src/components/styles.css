@@ -1,0 +1,100 @@
+body {
+  background-color: #222831;
+  color: #eeeeee;
+}
+
+.smoothbackground {
+  border-radius: 10px;
+  background: #393e46;
+  padding: 20px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.spendinginputbackground {
+  height: 400px;
+}
+
+label {
+  color: #eeeeee;
+}
+
+.Squezer {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input {
+  color: #eeeeee;
+  font-family: "Nunito", sans-serif;
+}
+
+h5 {
+  display: inline;
+}
+
+.budgetButton {
+  margin-bottom: 30px;
+  margin-right: 10px;
+}
+
+.btn-large {
+  border-radius: 33px !important;
+}
+
+.align-right-button {
+  position: absolute !important;
+  right: 5%;
+}
+
+.collection {
+  border: 0 !important;
+}
+
+.collection-item {
+  background-color: transparent !important;
+  line-height: 2.3rem !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #00bcd4 !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus+label {
+  color: #00bcd4 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #00bcd4 !important;
+}
