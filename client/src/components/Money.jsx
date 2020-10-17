@@ -55,11 +55,11 @@ updateInterval;
     var mapped = this.props.money.transes.slice(0).reverse().map(trans => {
       return (
         <div key={trans._id} className="smoothbackground z-depth-3">
-        <h5 key={trans._id} className="collection-item" style={{
+        <h6 key={trans._id} className="collection-item" style={{
     textDecoration: trans.crossedOut ? "line-through" : "none"
   }}> {trans.who} spent ${trans.amount} on {trans.info}
   <button onClick={this.handleClickChange} type="submit" className="btn-floating btn-small waves-effect waves-light align-right-button cyan" name="CrossOut" value={trans._id}><img src="delete-icon.png" alt="delete" style={{width:"15px", height:"15px", marginTop: "8px"}}/></button>
-        </h5>
+  </h6>
 </div>
       )
     })
@@ -67,26 +67,26 @@ updateInterval;
   }
 
   stopOrContinueSpending() {
-    if (this.props.money.higestSummedPerson === this.props.money.userName) return <h5>You spent ${this.props.money.usersTotalSpending} in total. <br />Stop spending. Wait others to reach you.</h5>
-    else if (this.props.money.userDebt === undefined) return <h5>You haven't spent anything yet.</h5>
-    else return (<h5>You spent ${this.props.money.usersTotalSpending} in total. <br />Spend ${this.props.money.userDebt.toFixed(2)} more to reach {this.props.money.higestSummedPerson}.</h5>)
+    if (this.props.money.higestSummedPerson === this.props.money.userName) return <h6>You spent ${this.props.money.usersTotalSpending} in total. <br />Stop spending. Wait others to reach you.</h6>
+    else if (this.props.money.userDebt === undefined) return <h6>You haven't spent anything yet.</h6>
+    else return (<h6>You spent ${this.props.money.usersTotalSpending} in total. <br />Spend ${this.props.money.userDebt.toFixed(2)} more to reach {this.props.money.higestSummedPerson}.</h6>)
   }
 
   addSpending() {
     return(
       <div className="smoothbackground z-depth-3">
       <form onSubmit = { this.handleSubmit } className="form-inline">
-        <h5>{this.props.money.userName} spent $</h5>
+        <h6>{this.props.money.userName} spent $</h6>
 
         <div style={{width:"50px"}} className="input-field inline">
         <input style={{width:"50px"}} onChange= {this.handleAmountChange} type="number" step="0.01" id="email_inline" className="validate" name="amount"/>
         <label htmlFor="email_inline">Ex: 30</label>
         </div>
 
-        <h5> on </h5>
+        <h6> on </h6>
 
-        <div className="input-field inline">
-        <input onChange= {this.handleInfoChange} type="text" id="email_inline" className="validate" name="info"/>
+        <div style={{width:"100px"}} className="input-field inline">
+        <input style={{width:"100px"}} onChange= {this.handleInfoChange} type="text" id="email_inline" className="validate" name="info"/>
         <label htmlFor="email_inline">Ex: Electric Bill</label>
         </div>
 
@@ -100,16 +100,16 @@ updateInterval;
   showPerson()
   {
     switch (this.props.money) {
-      case null: { return <h4>It's loading or you're logged out. IDK.</h4>}
+      case null: { return (<div><h4>Loading...</h4> <br /> <p>or you're logged out.</p></div>)}
       case false: { return <h4>You are definitely logged out!</h4>}
       default: return (
         <div className="row">
         <div className="col s12 l1">
-        <a href="/" role="button" className="btn btn-large waves-effect waves-light grey darken-4" style={{marginTop:"20px"}}>Back</a>
+        <a href="/" role="button" className="btn btn-large waves-effect waves-light grey darken-4" style={{marginTop:"20px", right: "20px"}}>Back</a>
         </div>
           <div className="col l5 s12 smoothbackground spendinginputbackground z-depth-4">
-            <h3>Hello, {this.props.money.userName}</h3>
-            <h4>You're in {this.props.money.house.name}.</h4>
+            <h4>Hello, {this.props.money.userName}</h4>
+            <h5>You're in {this.props.money.house.name}.</h5>
             <br />
 
             {this.stopOrContinueSpending()}
