@@ -15,7 +15,6 @@ class App extends Component {
   componentDidMount() {
 
     this.props.fetchUser();
-    this.props.fetchSelectPage();
 
   }
 
