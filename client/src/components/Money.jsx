@@ -124,9 +124,9 @@ class Money extends Component {
         <form onSubmit={this.handleSubmit} className="form-inline">
           <h6>I spent $</h6>
 
-          <div style={{ width: "50px" }} className="input-field inline">
+          <div style={{ width: "45px" }} className="input-field inline">
             <input
-              style={{ width: "50px" }}
+              style={{ width: "45px" }}
               onChange={this.handleAmountChange}
               type="number"
               step="0.01"
@@ -134,14 +134,14 @@ class Money extends Component {
               className="validate"
               name="amount"
             />
-            <label htmlFor="email_inline">Ex: 30</label>
+          <label htmlFor="email_inline">Ex: 20</label>
           </div>
 
           <h6> on </h6>
 
-          <div style={{ width: "120px" }} className="input-field inline">
+          <div style={{ width: "100px" }} className="input-field inline">
             <input
-              style={{ width: "120px" }}
+              style={{ width: "100px" }}
               onChange={this.handleInfoChange}
               type="text"
               id="email_inline"
@@ -155,13 +155,13 @@ class Money extends Component {
             onClick={this.handleClickChange}
             type="submit"
             name="SubmitSpending"
-            className="btn-floating btn waves-effect waves-light cyan"
+            className="btn-floating btn-small waves-effect waves-light cyan"
             style={{ marginLeft: "10px" }}
           >
             <img
               src="plus-icon.png"
               alt="delete"
-              style={{ width: "15px", height: "15px", marginTop: "12px" }}
+              style={{ width: "15px", height: "15px", marginTop: "9px" }}
             />
           </button>
         </form>

@@ -60,7 +60,7 @@ class Select extends Component {
       }
       default:
         return this.props.select.map((budgets, index) => (
-          <Zoom in={true} timeout={(index + 1) * 1000}>
+          <Zoom key={budgets._id} in={true} timeout={(index + 1) * 1000}>
             <button
               key={budgets._id}
               type="submit"
@@ -93,7 +93,7 @@ class Select extends Component {
                 </div>
 
                 <div className="input-field col s12">
-                  <div className="input-field col s9 l5">
+                  <div className="input-field col s8 l5">
                     <i className="material-icons prefix">
                       account_balance_wallet
                     </i>
@@ -104,7 +104,7 @@ class Select extends Component {
                       name="budgetName"
                       onChange={this.handleNewBudgetNameChange}
                     />
-                    <label htmlFor="icon_balance">Ex: The House</label>
+                    <label htmlFor="icon_balance">Ex: House</label>
                   </div>
                   <div className="input-field col l2 s2">
                     <button

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import Grow from '@material-ui/core/Grow';
+import Zoom from '@material-ui/core/Zoom';
+
 class Login extends Component {
   state = {
     username: "",
@@ -31,6 +34,7 @@ class Login extends Component {
   render() {
     return (
       <div className="Squezer">
+        <Grow in={true} timeout = {1000}>
         <div className="row">
           <div className="smoothbackground col s12 l5 offset-l3 z-depth-4">
             <form onSubmit={this.handleSubmit}>
@@ -58,6 +62,7 @@ class Login extends Component {
                   />
                   <label htmlFor="icon_password">Password</label>
                 </div>
+                <Zoom in={true} timeout = {1000}>
                 <button
                   type="submit"
                   className="btn-large waves-effect waves-light cyan"
@@ -65,10 +70,12 @@ class Login extends Component {
                 >
                   Login
                 </button>
+              </Zoom>
               </div>
             </form>
           </div>
         </div>
+      </Grow>
       </div>
     );
   }
