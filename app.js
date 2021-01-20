@@ -9,8 +9,6 @@ const app = express()
 const cors = require('cors')
 const port = 5000
 
-//Public folder usage and bodyParser.
-app.use(express.static(__dirname + '/public')); // This was more relevant with EJS. I just left it as it is.
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -18,7 +16,7 @@ app.use(bodyParser.json());
 
 app.use(cors())
 
-// For the cookies, user and password salt & hash.
+// For the session.
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
@@ -57,16 +55,24 @@ const userSchema = new mongoose.Schema({
 });
 
 // Bind userSchema to passport for login.
-userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose, {
+  limitAttempts: true,
+  interval: 1000,
+});
 
 const User = mongoose.model("User", userSchema);
 const Budget = mongoose.model("Budget", budgetSchema);
 const Transaction = mongoose.model("Transaction", transactionSchema);
 
-// More boilerplate for passport. (User login)
+module.exports = mongoose.model("User", userSchema);
+
+// use static authenticate method of model in LocalStrategy
 passport.use(User.createStrategy());
+
+// use static serialize and deserialize of model for passport session support
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
 
 // When requested, send user info.
 app.get('/api/current_user', (req, res) => {
@@ -311,21 +317,10 @@ app.post('/api/register', (req, res) => {
   });
 });
 
-app.post('/api/login', (req, res) => {
-
-  const user = new User({
-    username: req.body.user.username,
-    password: req.body.user.password
-  });
-
-  req.logIn(user, function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.status(200).send('OK');
-    }
-  });
-});
+app.post(
+  "/api/login",
+  passport.authenticate("local", { successRedirect: "/" })
+);
 
 if (process.env.NODE_ENV === 'production') {
   // If we're on production, not developement.

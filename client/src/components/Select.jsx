@@ -60,7 +60,7 @@ class Select extends Component {
       }
       default:
         return this.props.select.map((budgets, index) => (
-          <Zoom key={budgets._id} in={true} timeout={(index + 1) * 1000}>
+          <Zoom key={budgets._id} in={true} timeout={(index + 1) * 250}>
             <button
               key={budgets._id}
               type="submit"

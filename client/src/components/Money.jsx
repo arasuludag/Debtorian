@@ -15,7 +15,7 @@ class Money extends Component {
     // Fetches changes every 5 seconds.
     this.updateInterval = setInterval(() => {
       this.props.fetchMoneyPage();
-    }, 5000);
+    }, 20000);
   }
 
   state = {
@@ -66,7 +66,7 @@ class Money extends Component {
             direction="down"
             mountOnEnter
             in={true}
-            timeout={1500}
+            timeout={750}
           >
             <div key={trans._id} className="smoothbackground z-depth-3">
               <h6

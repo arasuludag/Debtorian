@@ -40,7 +40,7 @@ class Register extends Component {
   render() {
     return (
       <div className="Squezer">
-        <Grow in={true} timeout={1000}>
+        <Grow in={true} timeout={250}>
           <div className="row">
             <div className="smoothbackground col s12 l5 offset-l3 z-depth-4">
               <form onSubmit={this.handleSubmit}>
@@ -84,7 +84,7 @@ class Register extends Component {
                       awkward.
                     </p>
                   </div>
-                  <Zoom in={true} timeout={1000}>
+                  <Zoom in={true} timeout={400}>
                     <button
                       type="submit"
                       className="btn-large waves-effect waves-light cyan"
