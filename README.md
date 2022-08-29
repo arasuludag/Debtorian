@@ -6,6 +6,9 @@ You join to or create common budgets and enter your spendings to them. The app's
 
 Can be accessed from here: https://debtorian.herokuapp.com/
 
+
 For demo access, 
+
 user: batman@wayne.com
+
 password: demo123456!
