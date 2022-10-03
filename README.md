@@ -12,3 +12,6 @@ For demo access,
 user: batman@wayne.com
 
 password: demo123456!
+
+
+_Uses a very old version of React, Redux and the backend has some issues. Needs to be remade._
